@@ -1,9 +1,10 @@
 import React from 'react';
+import Progress from "./Components/Progress/Progress";
 
-function App() {
+const App:React.FC = () => {
     return (
         <div className="App">
-            123213
+            <Progress progress={30} />
         </div>
     );
 }
