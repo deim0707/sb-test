@@ -7,8 +7,8 @@ const initialState:ProjectItemType[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus eaque esse nam natus sed ut. Cum eos et sed.',
         progress: 'planning',
         // progress: 20,
-        quantity: 2,
-        price: 101,
+        quantity: 3,
+        price: NaN,
         factsAboutWork: 'some facts1'
     },
     {
@@ -53,10 +53,6 @@ const initialState:ProjectItemType[] = [
     },
 
 ]
-
-
-
-// ProjectItem[]
 
 
 const reducerProjects = (state = initialState, action: any): ProjectItemType[] => {

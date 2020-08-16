@@ -2,10 +2,10 @@ import React from "react";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import {useSelector} from "react-redux";
 import style from './Projects.module.scss';
-import {ProjectItemType} from "../../Store/types";
+import {ProjectItemType} from "../../../Store/types";
 
 
-const Project: React.FC = () => {
+const Projects: React.FC = () => {
 
     const projects: ProjectItemType[] = useSelector((state: ProjectItemType[]) => state)
 
@@ -16,4 +16,4 @@ const Project: React.FC = () => {
     )
 }
 
-export default Project;
+export default Projects;

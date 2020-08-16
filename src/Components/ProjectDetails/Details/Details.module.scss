@@ -1,0 +1,13 @@
+.detailWrapper {
+  width: 850px;
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+
+    .works {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

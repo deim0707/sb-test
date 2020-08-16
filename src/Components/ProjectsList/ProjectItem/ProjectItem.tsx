@@ -1,5 +1,5 @@
 import React from "react";
-import {ProjectItemType} from '../../Store/types';
+import {ProjectItemType} from '../../../Store/types';
 import Progress from "../Progress/Progress";
 import Button from "react-bootstrap/Button";
 import style from './ProjectItem.module.scss'
