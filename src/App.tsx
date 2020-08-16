@@ -1,10 +1,10 @@
 import React from 'react';
-import Progress from "./Components/Progress/Progress";
+import Project from "./Components/Projects/Projects";
 
-const App:React.FC = () => {
+const App: React.FC = () => {
     return (
         <div className="App">
-            <Progress progress={30} />
+            <Project/>
         </div>
     );
 }
