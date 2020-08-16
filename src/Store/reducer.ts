@@ -1,64 +1,36 @@
-import {ProjectItemType} from './types'
+import {ProjectItemType, actionType} from './types'
 
-const initialState:ProjectItemType[] = [
-    {
-        id: 0,
-        title: 'Проект 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus eaque esse nam natus sed ut. Cum eos et sed.',
-        progress: 'planning',
-        // progress: 20,
-        quantity: 3,
-        price: NaN,
-        factsAboutWork: 'some facts1'
-    },
-    {
-        id: 1,
-        title: 'Проект 2',
-        description: 'Здесь другое описание проекта',
-        progress: 'design',
-        // progress: 60,
-        quantity: 2,
-        price: 101,
-        factsAboutWork: 'some facts2'
-    },
-    {
-        id: 2,
-        title: 'Проект 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus eaque esse nam natus sed ut. Cum eos et sed.',
-        progress: 'implementation',
-        // progress: 20,
-        quantity: 2,
-        price: 101,
-        factsAboutWork: 'some facts2'
-    },
-    {
-        id: 3,
-        title: 'Проект 5',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus eaque esse nam natus sed ut. Cum eos et sed.',
-        progress: 'balance',
-        // progress: 20,
-        quantity: 2,
-        price: 101,
-        factsAboutWork: 'some facts2'
-    },
-    {
-        id: 4,
-        title: 'Проект 6',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem doloribus eaque esse nam natus sed ut. Cum eos et sed.',
-        progress: 'closed',
-        // progress: 20,
-        quantity: 2,
-        price: 101,
-        factsAboutWork: 'some facts2'
-    },
-
-]
+import initialState from "./initialState";
 
 
-const reducerProjects = (state = initialState, action: any): ProjectItemType[] => {
+const changeOneItem = (state: ProjectItemType[], id: number, changes?: any): ProjectItemType[] => {
+    return state.map((item: ProjectItemType) => {
+        if (item.id === id) return {...item, ...changes}
+        else return item
+    })
+}
+
+
+const arrayWithFacts = (state: ProjectItemType[], id: number):string[] => {
+    const idxArray = state.findIndex((item: ProjectItemType) => item.id === id);
+    return state[idxArray].factsAboutWork
+}
+
+const reducerProjects = (state = initialState, action: actionType): ProjectItemType[] => {
     switch (action.type) {
-        case 'AAA':
-            return state;
+        case 'CHANGE_QUANTITY':
+            return changeOneItem(state, action.id, {quantity: action.payload});
+
+        case 'CHANGE_PRICE':
+            return changeOneItem(state, action.id, {price: action.payload});
+
+        case 'CHANGE_PROGRESS_STATUS':
+            return changeOneItem(state, action.id, {progress: action.payload});
+
+        case 'ADD_FACT_ABOUT_WORK':
+            return changeOneItem(state, action.id,
+                {factsAboutWork: [...arrayWithFacts(state,action.id), action.payload]}
+                );
 
         default:
             return state;

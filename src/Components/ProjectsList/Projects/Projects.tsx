@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
 
     return (
         <div className={style.projects}>
-            {projects.map((item: ProjectItemType) => <ProjectItem project={item}/>)}
+            {projects.map((project: ProjectItemType): JSX.Element => <ProjectItem key={project.id} project={project}/>)}
         </div>
     )
 }

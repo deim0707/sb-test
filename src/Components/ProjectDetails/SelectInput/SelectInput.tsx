@@ -1,45 +1,28 @@
 import React from "react";
+import style from './SelectInput.module.scss'
+import {useDispatch} from "react-redux";
+import {changeProgressStatus} from "../../../Store/actions";
 
 interface Props {
-    valueProgress: string
+    valueProgress: string,
+    id: number
 }
 
-const SelectInput: React.FC<Props> = ({valueProgress}) => {
-    const isSelectedStatus = (type: string): boolean => valueProgress === type;
+const SelectInput: React.FC<Props> = ({valueProgress, id}) => {
+
+    const dispatch = useDispatch();
 
     return (
-        <select>
-            <option
-                value="planning"
-                selected={isSelectedStatus('planning')}
-            >
-                Планирование
-            </option>
-            <option
-                value="design"
-                selected={isSelectedStatus('design')}
-            >
-                Проектирование
-            </option>
-            <option
-                value="implementation"
-                selected={isSelectedStatus('implementation')}
-            >
-                Реализация
-            </option>
-            <option
-                value="balance"
-                selected={isSelectedStatus('balance')}
-            >
-                Постановка на баланс
-            </option>
-            <option
-                value="closed"
-                selected={isSelectedStatus('closed')}
-            >
-                Закрыт
-            </option>
-
+        <select
+            className={style.selectInput}
+            defaultValue={valueProgress}
+            onChange={(e) => dispatch(changeProgressStatus(id, e.target.value))}
+        >
+            <option value="planning"> Планирование</option>
+            <option value="design"> Проектирование</option>
+            <option value="implementation"> Реализация</option>
+            <option value="balance"> Постановка баланс</option>
+            <option value="closed"> Закрыт</option>
         </select>
     )
 }
