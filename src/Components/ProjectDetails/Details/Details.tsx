@@ -20,10 +20,10 @@ const Details: React.FC = () => {
         const idxItemInState = findItemInState(state, Number(id));
         return state[idxItemInState];
     })
-
-    useEffect(() => {
-        console.log(project)
-    })
+    //
+    // useEffect(() => {
+    //     console.log(project)
+    // })
 
     return (
         <div className={style.detailsWrapper}>

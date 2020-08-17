@@ -67,7 +67,7 @@ const FactsAboutWorks: React.FC<Props> = ({facts, id}) => {
                                     alt="trash"
                                     onClick={() => {
                                         console.log(`удалить айтем: ${idx}`)
-                                        dispatch(deleteFactAboutWork(id,idx))
+                                        dispatch(deleteFactAboutWork(id, idx))
                                     }}
                                 />
                             </ListGroup.Item>

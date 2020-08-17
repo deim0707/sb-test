@@ -11,10 +11,10 @@ interface Props {
     id: number
 }
 
-const QuantityInput:React.FC<Props> = ({quantity,id}) => {
+const QuantityInput: React.FC<Props> = ({quantity, id}) => {
     const dispatch = useDispatch();
 
-    return(
+    return (
         <div className={style.quantityInput}>
 
             <Form.Label htmlFor="inputQuantity" className="my-1 mr-2">
@@ -24,7 +24,7 @@ const QuantityInput:React.FC<Props> = ({quantity,id}) => {
 
             <Button
                 variant='primary'
-                onClick={()=>dispatch(changeQuantityAction(id, quantity-1))}
+                onClick={() => dispatch(changeQuantityAction(id, quantity - 1))}
             >
                 -
             </Button>
@@ -35,12 +35,12 @@ const QuantityInput:React.FC<Props> = ({quantity,id}) => {
                 id="inputQuantity"
                 type='number'
                 value={quantity}
-                onChange={(e)=>dispatch(changeQuantityAction(id, Number(e.target.value)))}
+                onChange={(e) => dispatch(changeQuantityAction(id, Number(e.target.value)))}
             />
 
             <Button
                 variant='primary'
-                onClick={()=>dispatch(changeQuantityAction(id, quantity+1))}
+                onClick={() => dispatch(changeQuantityAction(id, quantity + 1))}
             >
                 +
             </Button>
