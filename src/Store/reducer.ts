@@ -13,7 +13,6 @@ const changeOneItem = (state: ProjectItemType[], id: number, changes?: any): Pro
 const arrayWithFacts = (state: ProjectItemType[], id: number): string[] => state[findItemInState(state, id)].factsAboutWork
 
 
-
 const reducerProjects = (state = initialState, action: actionType): ProjectItemType[] => {
     switch (action.type) {
         case 'CHANGE_QUANTITY':
@@ -32,9 +31,11 @@ const reducerProjects = (state = initialState, action: actionType): ProjectItemT
 
         case 'DELETE_FACT_ABOUT_WORK':
             return changeOneItem(state, action.id,
-                {factsAboutWork: arrayWithFacts(state, action.id).filter( (item,idx) => {
-                    if(idx !== action.payload) return item;
-                    })}
+                {
+                    factsAboutWork: arrayWithFacts(state, action.id).filter((item, idx) => {
+                        if (idx !== action.payload) return item;
+                    })
+                }
             );
 
         default:
