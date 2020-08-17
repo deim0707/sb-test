@@ -1,17 +1,32 @@
 .detailsWrapper {
   width: 750px;
+  margin-top: 10px;
+
+
+  .name {
+    margin-bottom: 30px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  }
 
   .details {
-    display: flex;
-    justify-content: space-between;
 
 
+    .inputsFirstLine {
+      display: flex;
+      justify-content: space-between;
+    }
 
-    .inputs {
-      width: 250px;
+    .inputsSecondLine {
+      display: flex;
+      justify-content: space-between;
+
 
       input {
-        //width: 100%;
         &[type='number'] {
           -moz-appearance: textfield;
         }
@@ -21,13 +36,7 @@
           -webkit-appearance: none;
         }
       }
-      .priceInput {
-        margin-top: 10px;
-        display: flex;
-        input {
-          text-align: center;
-        }
-      }
+
     }
   }
 }

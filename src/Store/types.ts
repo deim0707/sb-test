@@ -3,9 +3,8 @@ export interface ProjectItemType {
     title: string,
     description: string,
     progress: string,
-    // progress: number,
     quantity: number,
-    price: number,
+    price?: number,
     factsAboutWork: string[]
 }
 

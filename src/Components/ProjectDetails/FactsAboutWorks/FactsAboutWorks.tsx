@@ -56,25 +56,25 @@ const FactsAboutWorks: React.FC<Props> = ({facts, id}) => {
             </Form>
 
 
-            <ListGroup className={style.facts}>
-                {
-                    facts.map((item: string, idx: number): JSX.Element => {
-                        return (
-                            <ListGroup.Item key={`idProj:${id}idFact:${idx}`} className={style.listGroupItem}>
-                                <span>{item}</span>
-                                <img
-                                    src={trash}
-                                    alt="trash"
-                                    onClick={() => {
-                                        console.log(`удалить айтем: ${idx}`)
-                                        dispatch(deleteFactAboutWork(id,idx))
-                                    }}
-                                />
-                            </ListGroup.Item>
-                        )
-                    })
-                }
-            </ListGroup>
+            {/*<ListGroup className={style.facts}>*/}
+            {/*    {*/}
+            {/*        facts.map((item: string, idx: number): JSX.Element => {*/}
+            {/*            return (*/}
+            {/*                <ListGroup.Item key={`idProj:${id}idFact:${idx}`} className={style.listGroupItem}>*/}
+            {/*                    <span>{item}</span>*/}
+            {/*                    <img*/}
+            {/*                        src={trash}*/}
+            {/*                        alt="trash"*/}
+            {/*                        onClick={() => {*/}
+            {/*                            console.log(`удалить айтем: ${idx}`)*/}
+            {/*                            dispatch(deleteFactAboutWork(id,idx))*/}
+            {/*                        }}*/}
+            {/*                    />*/}
+            {/*                </ListGroup.Item>*/}
+            {/*            )*/}
+            {/*        })*/}
+            {/*    }*/}
+            {/*</ListGroup>*/}
 
 
         </div>

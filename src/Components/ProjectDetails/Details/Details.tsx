@@ -6,10 +6,10 @@ import {ProjectItemType} from "../../../Store/types";
 import SelectInput from "../SelectInput/SelectInput";
 import QuantityInput from "../QuantityInput/QuantityInput";
 import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
-import Form from 'react-bootstrap/Form'
 import {findItemInState} from "../../../helpers";
-import style from './Details.module.scss';
 import HeaderDetails from "../HeaderDetails/HeaderDetails";
+import style from './Details.module.scss';
+import Input from "../Input/Input";
 
 
 const Details: React.FC = () => {
@@ -31,29 +31,27 @@ const Details: React.FC = () => {
             <HeaderDetails id={Number(id)}/>
 
             <div className={style.name}>
-                <h2>{project.title}</h2>
+                <div>
+                    <h2>{project.title}</h2>
+                    <SelectInput valueProgress={project.progress} id={project.id} label={'Статус проекта:'}/>
+                </div>
                 <p>{project.description}</p>
             </div>
 
             <div className={style.details}>
 
-                <FactsAboutWorks facts={project.factsAboutWork} id={project.id}/>
+                <div className={style.inputsFirstLine}>
+                    {/*<FactsAboutWorks facts={project.factsAboutWork} id={project.id}/>*/}
+                    <Input id={project.id} type={'string'} label={'Факт работы:'}/>
+                    <SelectInput valueProgress={project.progress} id={project.id} label={'Статус проекта:'}/>
+                </div>
 
-                <div className={style.inputs}>
-                    <SelectInput valueProgress={project.progress} id={project.id}/>
-                    <QuantityInput quantity={project.quantity} id={project.id}/>
-                    <div className={style.priceInput}>
-                        <Form.Label htmlFor="inputPrice" className="my-1 mr-2">
-                            Цена:
-                        </Form.Label>
-                        <Form.Control
-                            placeholder='Введите цену'
-                            type='number'
-                            id="inputPrice"
-                            value={project.price}
-                            onChange={(e) => dispatch(changePriceAction(project.id, Number(e.target.value)))}
-                        />
-                    </div>
+                <div className={style.inputsSecondLine}>
+                    <Input id={project.id} type={'number'} label={'Колличество:'} value={project.quantity}/>
+                    {/*changePriceAction*/}
+                    <Input id={project.id} type={'number'} label={'Цена:'} value={project.price} placeholder={'Введите цену'}/>
+                    <Input id={project.id} type={'date'} label={'Крайний срок:'} />
+
 
                 </div>
 

@@ -6,17 +6,18 @@ import Form from 'react-bootstrap/Form'
 
 interface Props {
     valueProgress: string,
-    id: number
+    id: number,
+    label: string
 }
 
-const SelectInput: React.FC<Props> = ({valueProgress, id}) => {
+const SelectInput: React.FC<Props> = ({valueProgress, id,label}) => {
 
     const dispatch = useDispatch();
 
     return (
         <Form inline>
             <Form.Label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
-                Статус:
+                {label}
             </Form.Label>
             <Form.Control
                 as="select"

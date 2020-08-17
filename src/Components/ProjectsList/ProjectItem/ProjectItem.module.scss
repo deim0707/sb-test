@@ -5,6 +5,12 @@
   border-radius: 6px;
   padding: 5px;
 
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   .description {
     margin-top: 5px;
 
@@ -21,7 +27,6 @@
       align-self: center;
 
       a {
-        text-decoration: none;
         color: white;
       }
     }
