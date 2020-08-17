@@ -1,7 +1,12 @@
 import React, {useState} from "react";
-import style from "./FactsAboutWorks.module.scss";
 import {useDispatch} from "react-redux";
 import {addFactAboutWork} from "../../../Store/actions";
+import ListGroup from "react-bootstrap/ListGroup";
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import style from "./FactsAboutWorks.module.scss";
+
 
 interface Props {
     facts: string[],
@@ -23,26 +28,45 @@ const FactsAboutWorks: React.FC<Props> = ({facts, id}) => {
 
     return (
         <div className={style.works}>
-            <div>
-                <input
-                    type="text"
-                    value={newFact}
-                    placeholder='Добавьте факт о работах'
-                    onChange={e => setNewFact(e.target.value)}
-                />
-                <button onClick={event => addNewFact(event)}>Добавить</button>
-            </div>
-            <ul>
-                {
-                    facts.map((item: string, idx: number): JSX.Element => {
-                        return (
-                            <li key={`idProj:${id}idFact:${idx}`}>
-                                {item}
-                            </li>
-                        )
-                    })
-                }
-            </ul>
+            <Form>
+                <Form.Row className="align-items-center">
+                    <Col xs="auto">
+                        <Form.Label htmlFor="inlineFormInput" srOnly>
+                            Факт о работе
+                        </Form.Label>
+                        <Form.Control
+                            className="mb-2"
+                            id="inlineFormInput"
+                            type="text"
+                            value={newFact}
+                            placeholder='Добавьте факт о работах'
+                            onChange={e => setNewFact(e.target.value)}
+                        />
+                    </Col>
+                    <Col xs="auto">
+                        <Button
+                            onClick={event => addNewFact(event)}
+                            className="mb-2"
+                        >
+                            Добавить
+                        </Button>
+                    </Col>
+                </Form.Row>
+            </Form>
+
+
+            <ListGroup className={style.facts}>
+                    {
+                        facts.map((item: string, idx: number): JSX.Element => {
+                            return (
+                                <ListGroup.Item key={`idProj:${id}idFact:${idx}`}>
+                                    {item}
+                                </ListGroup.Item>
+                            )
+                        })
+                    }
+            </ListGroup>
+
 
         </div>
     )

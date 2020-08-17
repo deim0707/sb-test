@@ -11,7 +11,7 @@
       width: 250px;
 
       input {
-        width: 100%;
+        //width: 100%;
         &[type='number'] {
           -moz-appearance: textfield;
         }
@@ -20,6 +20,10 @@
         &::-webkit-inner-spin-button {
           -webkit-appearance: none;
         }
+      }
+      .priceInput {
+        margin-top: 10px;
+        display: flex;
       }
     }
   }

@@ -1,4 +1,8 @@
 .works {
   display: flex;
   flex-direction: column;
+
+  .facts{
+    margin-top: 10px;
+  }
 }
