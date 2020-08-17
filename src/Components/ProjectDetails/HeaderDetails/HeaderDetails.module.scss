@@ -1,0 +1,15 @@
+.headerDetails{
+  position: fixed;
+  top: 0;
+
+  ul {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+
+    li {
+      list-style-type: none;
+
+    }
+  }
+}

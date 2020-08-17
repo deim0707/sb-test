@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {ProjectItemType} from '../../../Store/types';
 import Progress from "../Progress/Progress";
 import Button from "react-bootstrap/Button";
@@ -10,23 +11,19 @@ interface Props {
 
 const ProjectItem: React.FC<Props> = ({project}) => {
 
-
-    const title = project.title;
-    const description = project.description;
-    const progress = project.progress;
-
-
     return (
         <section className={style.projectItem}>
-            <Progress progress={progress}/>
+            <Progress progress={project.progress}/>
 
 
             <div className={style.description}>
                 <div>
-                    <h3>{title}</h3>
-                    <p>{description}</p>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
                 </div>
-                <Button variant="dark">Подробности</Button>
+                <Button variant="dark">
+                    <Link to={`/projects/${project.id}`}>Подробности</Link>
+                </Button>
             </div>
         </section>
     )

@@ -37,5 +37,12 @@ interface AddFactAboutWorkInterface {
     payload: string
 }
 
+export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
+interface DeleteFactAboutWorkInterface {
+    type: typeof DELETE_FACT_ABOUT_WORK,
+    id: number,
+    payload: number
+}
 
-export type actionType = ChangeQuantityInterface | ChangePriceInterface | ChangeProgressStatusInterface | AddFactAboutWorkInterface;
+
+export type actionType = ChangeQuantityInterface | ChangePriceInterface | ChangeProgressStatusInterface | AddFactAboutWorkInterface | DeleteFactAboutWorkInterface;

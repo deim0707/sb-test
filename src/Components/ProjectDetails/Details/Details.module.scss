@@ -1,5 +1,5 @@
 .detailsWrapper {
-  max-width: 750px;
+  width: 750px;
 
   .details {
     display: flex;
@@ -24,6 +24,9 @@
       .priceInput {
         margin-top: 10px;
         display: flex;
+        input {
+          text-align: center;
+        }
       }
     }
   }
