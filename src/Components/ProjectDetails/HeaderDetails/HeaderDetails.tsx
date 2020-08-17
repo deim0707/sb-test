@@ -23,7 +23,7 @@ const HeaderDetails:React.FC<Props> = ({id}) => {
             <ul>
                 <li><Link to={'/'}>На главную</Link></li>
                 {/*<li><Link to>Вперёд</Link></li>*/}
-                <li onClick={()=> nextProject()}>Сохранить</li>
+                {/*<li onClick={()=> nextProject()}>Сохранить</li>*/}
                 {/*<li>Отправить</li>*/}
                 {/*<li>Выйти</li>*/}
             </ul>
