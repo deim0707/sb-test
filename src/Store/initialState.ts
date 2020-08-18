@@ -13,14 +13,21 @@ const initialState: ProjectItemType[] = [
                 title: 'Купить обои',
                 qt: 2,
                 price: 100,
-                date: 123123123123,
+                date: 1597749065097,
                 status: 'planning'
             },
             {
                 title: 'Отремонтировать комнат',
                 qt: 21,
                 price: 1000000,
-                date: 123123123123,
+                date: 1597749065097,
+                status: 'design'
+            },
+            {
+                title: 'Купить шкаф',
+                qt: 2,
+                price: 3000,
+                date: 1597749065097,
                 status: 'design'
             },
         ]
@@ -37,14 +44,21 @@ const initialState: ProjectItemType[] = [
                 title: 'Купить обои',
                 qt: 2,
                 price: 100,
-                date: 123123123123,
+                date: 1597749065097,
                 status: 'planning'
             },
             {
                 title: 'Отремонтировать комнат',
                 qt: 21,
                 price: 1000000,
-                date: 123123123123,
+                date: 1597749065097,
+                status: 'design'
+            },
+            {
+                title: 'Купить шкаф',
+                qt: 2,
+                price: 3000,
+                date: 1597749065097,
                 status: 'design'
             },
         ]
@@ -62,14 +76,21 @@ const initialState: ProjectItemType[] = [
                 title: 'Купить обои',
                 qt: 2,
                 price: 100,
-                date: 123123123123,
+                date: 1597749065097,
                 status: 'planning'
             },
             {
                 title: 'Отремонтировать комнат',
                 qt: 21,
                 price: 1000000,
-                date: 123123123123,
+                date: 1597749065097,
+                status: 'design'
+            },
+            {
+                title: 'Купить шкаф',
+                qt: 2,
+                price: 3000,
+                date: 1597749065097,
                 status: 'design'
             },
         ]
@@ -87,14 +108,21 @@ const initialState: ProjectItemType[] = [
                 title: 'Купить обои',
                 qt: 2,
                 price: 100,
-                date: 123123123123,
+                date: 1597749065097,
                 status: 'planning'
             },
             {
                 title: 'Отремонтировать комнат',
                 qt: 21,
                 price: 1000000,
-                date: 123123123123,
+                date: 1597749065097,
+                status: 'design'
+            },
+            {
+                title: 'Купить шкаф',
+                qt: 2,
+                price: 3000,
+                date: 1597749065097,
                 status: 'design'
             },
         ]
@@ -112,14 +140,21 @@ const initialState: ProjectItemType[] = [
                 title: 'Купить обои',
                 qt: 2,
                 price: 100,
-                date: 123123123123,
+                date: 1597749065097,
                 status: 'planning'
             },
             {
                 title: 'Отремонтировать комнат',
                 qt: 21,
                 price: 1000000,
-                date: 123123123123,
+                date: 1597749065097,
+                status: 'design'
+            },
+            {
+                title: 'Купить шкаф',
+                qt: 2,
+                price: 3000,
+                date: 1597749065097,
                 status: 'design'
             },
         ]

@@ -3,8 +3,6 @@ import {
     CHANGE_QUANTITY,
     CHANGE_PRICE,
     CHANGE_PROGRESS_STATUS,
-    ADD_FACT_ABOUT_WORK,
-    DELETE_FACT_ABOUT_WORK
 } from "./types";
 
 export const changeQuantityAction = (id:number, value: number): actionType => {
@@ -31,18 +29,18 @@ export const changeProgressStatus = (id:number, value: string): actionType => {
     }
 }
 
-export const addFactAboutWork = (id:number, value: string): actionType => {
-    return {
-        type: ADD_FACT_ABOUT_WORK,
-        id: id,
-        payload: value
-    }
-}
-
-export const deleteFactAboutWork = (idProject:number, idxFact: number): actionType => {
-    return {
-        type: DELETE_FACT_ABOUT_WORK,
-        id: idProject,
-        payload: idxFact
-    }
-}
+// export const addFactAboutWork = (id:number, value: string): actionType => {
+//     return {
+//         type: ADD_FACT_ABOUT_WORK,
+//         id: id,
+//         payload: value
+//     }
+// }
+//
+// export const deleteFactAboutWork = (idProject:number, idxFact: number): actionType => {
+//     return {
+//         type: DELETE_FACT_ABOUT_WORK,
+//         id: idProject,
+//         payload: idxFact
+//     }
+// }

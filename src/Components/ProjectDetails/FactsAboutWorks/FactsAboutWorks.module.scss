@@ -1,23 +1,4 @@
-.works {
-  display: flex;
-  flex-direction: column;
-
-  .facts {
-    margin-top: 10px;
-
-    .listGroupItem {
-      display: flex;
-      justify-content: space-between;
-      width: 350px;
-
-      img {
-        cursor: pointer;
-        margin-left: 20px;
-      }
-    }
-
-  }
-
-
+.facts {
+  margin-top: 20px;
 }
 

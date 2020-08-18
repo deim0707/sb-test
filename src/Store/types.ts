@@ -37,19 +37,21 @@ interface ChangeProgressStatusInterface {
     payload: string
 }
 
-export const ADD_FACT_ABOUT_WORK = 'ADD_FACT_ABOUT_WORK';
-interface AddFactAboutWorkInterface {
-    type: typeof ADD_FACT_ABOUT_WORK,
-    id: number,
-    payload: string
-}
+// export const ADD_FACT_ABOUT_WORK = 'ADD_FACT_ABOUT_WORK';
+// interface AddFactAboutWorkInterface {
+//     type: typeof ADD_FACT_ABOUT_WORK,
+//     id: number,
+//     payload: string
+// }
+//
+// export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
+// interface DeleteFactAboutWorkInterface {
+//     type: typeof DELETE_FACT_ABOUT_WORK,
+//     id: number,
+//     payload: number
+// }
 
-export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
-interface DeleteFactAboutWorkInterface {
-    type: typeof DELETE_FACT_ABOUT_WORK,
-    id: number,
-    payload: number
-}
 
-
-export type actionType = ChangeQuantityInterface | ChangePriceInterface | ChangeProgressStatusInterface | AddFactAboutWorkInterface | DeleteFactAboutWorkInterface;
+export type actionType = ChangeQuantityInterface |
+    ChangePriceInterface |
+    ChangeProgressStatusInterface;

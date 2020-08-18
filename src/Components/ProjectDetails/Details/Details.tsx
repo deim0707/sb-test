@@ -8,6 +8,8 @@ import SelectInput from "../SelectInput/SelectInput";
 import Input from "../Input/Input";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
 import style from './Details.module.scss';
 
 
@@ -19,9 +21,9 @@ const Details: React.FC = () => {
         return state[idxItemInState];
     })
 
-    useEffect(() => {
-        console.log(project)
-    })
+    // useEffect(() => {
+    //     console.log(project)
+    // })
 
     return (
         <div className={style.detailsWrapper}>
@@ -51,7 +53,6 @@ const Details: React.FC = () => {
                         <Input id={project.id} type={'number'} label={'Колличество:'} value={project.quantity}/>
                     </Col>
                     <Col>
-                        {/*changePriceAction*/}
                         <Input id={project.id} type={'number'} label={'Цена:'} value={project.price}
                                placeholder={'Введите цену'}/>
                     </Col>
@@ -63,11 +64,26 @@ const Details: React.FC = () => {
 
                     </Col>
                     <Col>
-                        <SelectInput valueProgress={project.progress} id={project.id} label={'Статус проекта:'}/>
+                        <SelectInput valueProgress={project.progress} id={project.id} label={'Статус:'}/>
                     </Col>
                 </Row>
 
+                <Row>
+                    <Col>
+                        <Button>Добавить</Button>
+                    </Col>
+                </Row>
+
+
+
             </div>
+
+            <Row>
+                <Col>
+                    <FactsAboutWorks id={id}/>
+                </Col>
+            </Row>
+
         </div>
     )
 }
