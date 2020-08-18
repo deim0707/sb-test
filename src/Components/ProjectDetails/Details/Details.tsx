@@ -3,13 +3,11 @@ import {useSelector} from "react-redux";
 import {useParams} from 'react-router-dom';
 import {ProjectItemType} from "../../../Store/types";
 import {findItemInState} from "../../../helpers";
-import HeaderDetails from "../HeaderDetails/HeaderDetails";
 import SelectInput from "../SelectInput/SelectInput";
-import Input from "../Input/Input";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import Button from 'react-bootstrap/Button'
 import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
+import FormDetailsProject from "../FormDetailsProject/FormDetailsProject";
 import style from './Details.module.scss';
 
 
@@ -28,7 +26,7 @@ const Details: React.FC = () => {
     return (
         <div className={style.detailsWrapper}>
 
-            <HeaderDetails id={Number(id)}/>
+            {/*<HeaderDetails id={Number(id)}/>*/}
 
             <div className={style.name}>
                 <Row>
@@ -39,44 +37,7 @@ const Details: React.FC = () => {
                 <p>{project.description}</p>
             </div>
 
-            <div className={style.details}>
-
-                <Row>
-                    <Col>
-                        <Input id={project.id} type={'string'} label={'Факт работы:'}
-                               className={style.longLabel}/>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <Input id={project.id} type={'number'} label={'Колличество:'} value={project.quantity}/>
-                    </Col>
-                    <Col>
-                        <Input id={project.id} type={'number'} label={'Цена:'} value={project.price}
-                               placeholder={'Введите цену'}/>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <Input id={project.id} className={style.longLabel} type={'date'} label={'Крайний срок:'}/>
-
-                    </Col>
-                    <Col>
-                        <SelectInput valueProgress={project.progress} id={project.id} label={'Статус:'}/>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <Button>Добавить</Button>
-                    </Col>
-                </Row>
-
-
-
-            </div>
+            <FormDetailsProject id={id}/>
 
             <Row>
                 <Col>

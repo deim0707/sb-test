@@ -1,28 +1,25 @@
 import React from "react";
-import {useDispatch} from "react-redux";
 import Form from "react-bootstrap/Form";
 import style from './Input.module.scss'
 
 interface Props {
-    id: number
     type: string
     label: string
-    value?: string | number,
+    value: string | number,
     placeholder?: string,
-    action?: any,
+    onChange: Function,
     className?: string
 }
 
 const Input: React.FC<Props> = ({
-                                    id,
                                     value,
                                     type,
                                     placeholder,
                                     label,
-                                    action,
+                                    onChange,
                                     className
                                 }) => {
-    const dispatch = useDispatch();
+
 
     return (
         <div className={`${style.input} ${className || null}`}>
@@ -34,7 +31,8 @@ const Input: React.FC<Props> = ({
                 type={type}
                 id={`${label}${type}${placeholder}`}
                 value={value}
-                onChange={(e) => dispatch(action(id, Number(e.target.value)))}
+                // onChange={(e) => dispatch(action(id, Number(e.target.value)))}
+                onChange={(e) => onChange(e.target.value)}
             />
         </div>
     )

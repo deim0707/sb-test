@@ -10,7 +10,7 @@ const initialState: ProjectItemType[] = [
         price: 0,
         factsAboutWork: [
             {
-                title: 'Купить обои',
+                title: 'Купить красивые обои',
                 qt: 2,
                 price: 100,
                 date: 1597749065097,

@@ -1,18 +1,16 @@
 import React from "react";
-import {useDispatch} from "react-redux";
-import {changeProgressStatus} from "../../../Store/actions";
 import Form from 'react-bootstrap/Form'
 import style from './SelectInput.module.scss'
 
 interface Props {
-    valueProgress: string,
-    id: number,
     label: string
+    id?: number,
+    valueProgress?: string,
+    onChange?: any
 }
 
-const SelectInput: React.FC<Props> = ({valueProgress, id,label}) => {
+const SelectInput: React.FC<Props> = ({valueProgress, id, label,onChange}) => {
 
-    const dispatch = useDispatch();
 
     return (
         <Form inline className={`${style.selectInput}`}>
@@ -24,7 +22,7 @@ const SelectInput: React.FC<Props> = ({valueProgress, id,label}) => {
                 className={`my-1 mr-sm-2`}
                 id="inlineFormCustomSelectPref"
                 defaultValue={valueProgress}
-                onChange={(e) => dispatch(changeProgressStatus(id, e.target.value))}
+                onChange={(e) => onChange(e.target.value)}
                 custom
             >
                 <option value="planning"> Планирование</option>
