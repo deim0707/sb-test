@@ -1,9 +1,10 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Table from "react-bootstrap/Table";
-import {findItemInState} from "../../../helpers";
-import style from "./FactsAboutWorks.module.scss";
 import {ProjectItemType, factAboutWork} from "../../../Store/types";
+import {findItemInState} from "../../../helpers";
+import Table from "react-bootstrap/Table";
+import trash from '../../../img/trash.svg'
+import style from "./FactsAboutWorks.module.scss";
 
 
 interface Props {
@@ -12,17 +13,15 @@ interface Props {
 
 const FactsAboutWorks: React.FC<Props> = ({id}) => {
 
-
     const state = useSelector((state: ProjectItemType[]) => state);
     const currentIdx = findItemInState(state, id);
     const currentProject = state[currentIdx].factsAboutWork;
 
-
     const returnDateString = (dateNumber: number): string => {
-        let date = new Date(dateNumber)
+        const date = new Date(dateNumber)
         const year = date.getFullYear()
-        let month = date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-        let day = date.getDate();
+        const month = date.getMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+        const day = date.getMonth() < 10 ? `0${date.getDate()}` : date.getDate();
 
         return `${day}.${month}.${year}`
     }
@@ -34,9 +33,7 @@ const FactsAboutWorks: React.FC<Props> = ({id}) => {
         if (status === 'balance') return 'Постановка на баланс'
         if (status === 'closed') return 'Закрыт'
         else return ''
-
     }
-
 
     return (
         <div className={style.facts}>
@@ -49,13 +46,14 @@ const FactsAboutWorks: React.FC<Props> = ({id}) => {
                     <td>Цена</td>
                     <td>Дедлайн</td>
                     <td>Статус</td>
+                    <td/>
                 </tr>
                 </thead>
                 <tbody>
                 {
                     currentProject.map((item: factAboutWork, idx: number): JSX.Element => {
                         return (
-                            <tr>
+                            <tr key={`pr${id}fact${idx}`}>
                                 <td>{idx + 1}</td>
                                 <td>{item.title}</td>
                                 <td>{item.qt}</td>
@@ -64,6 +62,9 @@ const FactsAboutWorks: React.FC<Props> = ({id}) => {
                                     {returnDateString(item.date)}
                                 </td>
                                 <td>{returnNameStatus(item.status)}</td>
+                                <td><img src={trash} alt="delete item" className={style.delete}
+                                         onClick={() => console.log(`удалить айтем с айди: ${id} и факт с айди ${idx}`)}/>
+                                </td>
                             </tr>
 
                         )

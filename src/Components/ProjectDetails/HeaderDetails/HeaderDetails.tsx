@@ -20,7 +20,7 @@ const HeaderDetails: React.FC<Props> = ({id}) => {
 
     const prewPage = (): string => {
         if (id > 1) return `/projects/${id - 1}`
-        else return `/projects/${projects[projects.length-1].id}`
+        else return `/projects/${projects[projects.length - 1].id}`
     }
 
     return (
@@ -29,10 +29,9 @@ const HeaderDetails: React.FC<Props> = ({id}) => {
                 <li><Link to={'/'}>На главную</Link></li>
                 <li><Link to={prewPage()}>Назад</Link></li>
                 <li><Link to={nextPage()}>Вперёд</Link></li>
-
-
             </ul>
         </nav>
+
     )
 }
 

@@ -6,20 +6,19 @@ interface Props {
     type: string
     label: string
     value: string | number,
-    placeholder?: string,
     onChange: Function,
+    placeholder?: string,
     className?: string
 }
 
 const Input: React.FC<Props> = ({
-                                    value,
                                     type,
-                                    placeholder,
                                     label,
                                     onChange,
+                                    value,
+                                    placeholder,
                                     className
                                 }) => {
-
 
     return (
         <div className={`${style.input} ${className || null}`}>
@@ -31,7 +30,6 @@ const Input: React.FC<Props> = ({
                 type={type}
                 id={`${label}${type}${placeholder}`}
                 value={value}
-                // onChange={(e) => dispatch(action(id, Number(e.target.value)))}
                 onChange={(e) => onChange(e.target.value)}
             />
         </div>

@@ -1,11 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useSelector} from "react-redux";
 import {useParams} from 'react-router-dom';
 import {ProjectItemType} from "../../../Store/types";
 import {findItemInState} from "../../../helpers";
-import SelectInput from "../SelectInput/SelectInput";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import SelectInput from "../SelectInput/SelectInput";
+import HeaderDetails from "../HeaderDetails/HeaderDetails";
 import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
 import FormDetailsProject from "../FormDetailsProject/FormDetailsProject";
 import style from './Details.module.scss';
@@ -19,14 +20,10 @@ const Details: React.FC = () => {
         return state[idxItemInState];
     })
 
-    // useEffect(() => {
-    //     console.log(project)
-    // })
-
     return (
         <div className={style.detailsWrapper}>
 
-            {/*<HeaderDetails id={Number(id)}/>*/}
+            <HeaderDetails id={Number(id)}/>
 
             <div className={style.name}>
                 <Row>
@@ -44,9 +41,8 @@ const Details: React.FC = () => {
                     <FactsAboutWorks id={id}/>
                 </Col>
             </Row>
-
         </div>
-    )
+    );
 }
 
 export default Details;

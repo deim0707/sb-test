@@ -44,15 +44,16 @@ interface AddFactAboutWorkInterface {
     payload: factAboutWork
 }
 //
-// export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
-// interface DeleteFactAboutWorkInterface {
-//     type: typeof DELETE_FACT_ABOUT_WORK,
-//     id: number,
-//     payload: number
-// }
+export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
+interface DeleteFactAboutWorkInterface {
+    type: typeof DELETE_FACT_ABOUT_WORK,
+    idProject: number,
+    idItem: number
+}
 
 
 export type actionType = ChangeQuantityInterface |
     ChangePriceInterface |
     ChangeProgressStatusInterface |
-    AddFactAboutWorkInterface;
+    AddFactAboutWorkInterface |
+    DeleteFactAboutWorkInterface;

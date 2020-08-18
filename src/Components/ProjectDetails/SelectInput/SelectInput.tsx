@@ -9,18 +9,17 @@ interface Props {
     onChange?: any
 }
 
-const SelectInput: React.FC<Props> = ({valueProgress, id, label,onChange}) => {
-
+const SelectInput: React.FC<Props> = ({valueProgress, id, label, onChange}) => {
 
     return (
         <Form inline className={`${style.selectInput}`}>
-            <Form.Label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
+            <Form.Label className="my-1 mr-2" htmlFor={`${label}-inlineFormCustomSelectPref`}>
                 {label}
             </Form.Label>
             <Form.Control
                 as="select"
                 className={`my-1 mr-sm-2`}
-                id="inlineFormCustomSelectPref"
+                id={`${label}-inlineFormCustomSelectPref`}
                 defaultValue={valueProgress}
                 onChange={(e) => onChange(e.target.value)}
                 custom
@@ -32,7 +31,6 @@ const SelectInput: React.FC<Props> = ({valueProgress, id, label,onChange}) => {
                 <option value="closed"> Закрыт</option>
             </Form.Control>
         </Form>
-
     )
 }
 

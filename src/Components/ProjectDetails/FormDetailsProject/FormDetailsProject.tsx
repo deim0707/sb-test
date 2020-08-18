@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {factAboutWork} from "../../../Store/types";
 import {addFactAboutWork} from "../../../Store/actions";
 import {useDispatch} from "react-redux";
@@ -20,20 +20,31 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
     const [price, setPrice] = useState('');
     const [finishDate, setFinishDate] = useState('');
     const [status, setStatus] = useState('planning');
-
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true)
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (title !== '' && quantity !== '' && price !== '' && finishDate !== '') setIsButtonDisabled(false)
+    }, [title, quantity, price, finishDate])
 
 
     const sendDataToStore = (e: React.SyntheticEvent) => {
         e.preventDefault()
-        const data:factAboutWork = {
+        const data: factAboutWork = {
             title: title,
             qt: Number(quantity),
             price: Number(price),
             date: Number(new Date(finishDate)),
             status: status
         }
-        dispatch(addFactAboutWork(id, data))
+        dispatch(addFactAboutWork(id, data));
+
+        setTitle('')
+        setQuantity('')
+        setPrice('')
+        setFinishDate('')
+        setStatus('planning')
+        setIsButtonDisabled(true)
     }
 
     return (
@@ -42,13 +53,14 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
             <Row>
                 <Col>
                     <Input type={'string'} label={'Факт работы:'} className={style.longLabel} value={title}
-                     onChange={setTitle}/>
+                           onChange={setTitle} placeholder={'Введите название работы'}/>
                 </Col>
             </Row>
 
             <Row>
                 <Col>
-                    <Input type={'number'} label={'Колличество:'} value={quantity} onChange={setQuantity}/>
+                    <Input type={'number'} label={'Колличество:'} value={quantity} onChange={setQuantity}
+                           placeholder={'Введите колличество'}/>
                 </Col>
                 <Col>
                     <Input type={'number'} label={'Цена:'} value={price} onChange={setPrice}
@@ -69,9 +81,11 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
 
             <Row>
                 <Col>
-                    {/*//тут экшен*/}
-                    {/*<Button onClick={()=>console.log(addDataToStore())}>Добавить</Button>*/}
-                    <Button onClick={(e)=>sendDataToStore(e)}>Добавить</Button>
+                    <Button
+                        disabled={isButtonDisabled}
+                        onClick={(e) => sendDataToStore(e)}>
+                        Добавить
+                    </Button>
 
                 </Col>
             </Row>
