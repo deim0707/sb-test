@@ -21,7 +21,9 @@ const reducerProjects = (state = initialState, action: actionType): ProjectItemT
         case 'CHANGE_PRICE':
             return changeOneItem(state, action.id, {price: action.payload});
 
+        // РЕАЛИЗОВАТЬ:
         case 'CHANGE_PROGRESS_STATUS':
+            console.log(action.payload)
             return changeOneItem(state, action.id, {progress: action.payload});
 
         case 'ADD_FACT_ABOUT_WORK':
