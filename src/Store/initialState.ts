@@ -8,7 +8,22 @@ const initialState: ProjectItemType[] = [
         progress: 'planning',
         quantity: 3,
         price: 0,
-        factsAboutWork: ['Согласовать с Московским офисом стиль', 'Покрасить стены', 'ещё один интересный факт о работах']
+        factsAboutWork: [
+            {
+                title: 'Купить обои',
+                qt: 2,
+                price: 100,
+                date: 123123123123,
+                status: 'planning'
+            },
+            {
+                title: 'Отремонтировать комнат',
+                qt: 21,
+                price: 1000000,
+                date: 123123123123,
+                status: 'design'
+            },
+        ]
     },
     {
         id: 2,
@@ -17,7 +32,22 @@ const initialState: ProjectItemType[] = [
         progress: 'design',
         quantity: 2,
         price: 101,
-        factsAboutWork: ['факт 1', 'факт2', 'ещё один интересный факт о работах']
+        factsAboutWork: [
+            {
+                title: 'Купить обои',
+                qt: 2,
+                price: 100,
+                date: 123123123123,
+                status: 'planning'
+            },
+            {
+                title: 'Отремонтировать комнат',
+                qt: 21,
+                price: 1000000,
+                date: 123123123123,
+                status: 'design'
+            },
+        ]
 
     },
     {
@@ -27,7 +57,22 @@ const initialState: ProjectItemType[] = [
         progress: 'implementation',
         quantity: 2,
         price: 101,
-        factsAboutWork: ['факт 1', 'факт2', 'ещё один интересный факт о работах']
+        factsAboutWork: [
+            {
+                title: 'Купить обои',
+                qt: 2,
+                price: 100,
+                date: 123123123123,
+                status: 'planning'
+            },
+            {
+                title: 'Отремонтировать комнат',
+                qt: 21,
+                price: 1000000,
+                date: 123123123123,
+                status: 'design'
+            },
+        ]
 
     },
     {
@@ -37,7 +82,22 @@ const initialState: ProjectItemType[] = [
         progress: 'balance',
         quantity: 2,
         price: 101,
-        factsAboutWork: ['факт 1', 'факт2', 'ещё один интересный факт о работах']
+        factsAboutWork: [
+            {
+                title: 'Купить обои',
+                qt: 2,
+                price: 100,
+                date: 123123123123,
+                status: 'planning'
+            },
+            {
+                title: 'Отремонтировать комнат',
+                qt: 21,
+                price: 1000000,
+                date: 123123123123,
+                status: 'design'
+            },
+        ]
 
     },
     {
@@ -47,7 +107,22 @@ const initialState: ProjectItemType[] = [
         progress: 'closed',
         quantity: 2,
         price: 101,
-        factsAboutWork: ['факт 1', 'факт2', 'ещё один интересный факт о работах']
+        factsAboutWork: [
+            {
+                title: 'Купить обои',
+                qt: 2,
+                price: 100,
+                date: 123123123123,
+                status: 'planning'
+            },
+            {
+                title: 'Отремонтировать комнат',
+                qt: 21,
+                price: 1000000,
+                date: 123123123123,
+                status: 'design'
+            },
+        ]
 
     },
 ]

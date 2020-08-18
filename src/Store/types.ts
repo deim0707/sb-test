@@ -1,3 +1,11 @@
+export interface factAboutWork {
+    title: string,
+    qt: number,
+    price: number,
+    date: number,
+    status: string
+}
+
 export interface ProjectItemType {
     id: number,
     title: string,
@@ -5,7 +13,7 @@ export interface ProjectItemType {
     progress: string,
     quantity: number,
     price?: number,
-    factsAboutWork: string[]
+    factsAboutWork: factAboutWork[]
 }
 
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';

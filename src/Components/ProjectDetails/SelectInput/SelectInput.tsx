@@ -1,8 +1,8 @@
 import React from "react";
-import style from './SelectInput.module.scss'
 import {useDispatch} from "react-redux";
 import {changeProgressStatus} from "../../../Store/actions";
 import Form from 'react-bootstrap/Form'
+import style from './SelectInput.module.scss'
 
 interface Props {
     valueProgress: string,
@@ -15,13 +15,13 @@ const SelectInput: React.FC<Props> = ({valueProgress, id,label}) => {
     const dispatch = useDispatch();
 
     return (
-        <Form inline>
+        <Form inline className={`${style.selectInput}`}>
             <Form.Label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">
                 {label}
             </Form.Label>
             <Form.Control
                 as="select"
-                className={`my-1 mr-sm-2 ${style.selectInput}`}
+                className={`my-1 mr-sm-2`}
                 id="inlineFormCustomSelectPref"
                 defaultValue={valueProgress}
                 onChange={(e) => dispatch(changeProgressStatus(id, e.target.value))}
