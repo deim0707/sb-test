@@ -1,34 +1,30 @@
-import React from "react";
-import {useParams} from 'react-router-dom';
+import React, { FC } from "react";
+import { useParams } from 'react-router-dom';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+
 import HeaderDetails from "../HeaderDetails/HeaderDetails";
 import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
 import FormDetailsProject from "../FormDetailsProject/FormDetailsProject";
 import TitleProjectDetails from "../TitleProjectDetails/TitleProjectDetails";
-import style from './Details.module.scss';
+import s from './Details.module.scss';
 
 
-const Details: React.FC = () => {
+const Details: FC<{}> = () => {
+  const { id } = useParams();
 
-    const {id} = useParams();
-
-    return (
-        <div className={style.detailsWrapper}>
-
-            <HeaderDetails id={Number(id)}/>
-
-            <TitleProjectDetails id={id}/>
-
-            <FormDetailsProject id={id}/>
-
-            <Row>
-                <Col>
-                    <FactsAboutWorks id={id}/>
-                </Col>
-            </Row>
-        </div>
-    );
+  return (
+    <div className={s.detailsWrapper}>
+      <HeaderDetails id={Number(id)} />
+      <TitleProjectDetails id={id} />
+      <FormDetailsProject id={id} />
+      <Row>
+        <Col>
+          <FactsAboutWorks id={id} />
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 export default Details;

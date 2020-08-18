@@ -16,6 +16,7 @@ export interface ProjectItemType {
     factsAboutWork: factAboutWork[]
 }
 
+// Не мешай константы с типами. Можно одельный файл consts.ts сделать
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';
 interface ChangeQuantityInterface {
     type: typeof CHANGE_QUANTITY,

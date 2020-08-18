@@ -1,6 +1,6 @@
-import {createStore} from "redux";
-import reducerProjects from "./reducer";
+import { createStore } from "redux";
+import projectsReducer from "./reducer";
 
-const store = createStore(reducerProjects);
+const store = createStore(projectsReducer);
 
 export default store;
