@@ -4,8 +4,8 @@ import style from './SelectInput.module.scss'
 
 interface Props {
     label: string
-    valueProgress?: string,
-    onChange?: any
+    valueProgress: string,
+    onChange: Function
 }
 
 const SelectInput: React.FC<Props> = ({valueProgress, label, onChange}) => {
@@ -19,7 +19,7 @@ const SelectInput: React.FC<Props> = ({valueProgress, label, onChange}) => {
                 as="select"
                 className={`my-1 mr-sm-2`}
                 id={`${label}-inlineFormCustomSelectPref`}
-                defaultValue={valueProgress}
+                value={valueProgress}
                 onChange={(e) => onChange(e.target.value)}
                 custom
             >

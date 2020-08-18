@@ -12,23 +12,10 @@ export interface ProjectItemType {
     description: string,
     progress: string,
     quantity: number,
-    price?: number,
+    price: number,
     factsAboutWork: factAboutWork[]
 }
 
-export const CHANGE_QUANTITY = 'CHANGE_QUANTITY';
-interface ChangeQuantityInterface {
-    type: typeof CHANGE_QUANTITY,
-    id: number,
-    payload: number
-}
-
-export const CHANGE_PRICE = 'CHANGE_PRICE';
-interface ChangePriceInterface {
-    type: typeof CHANGE_PRICE,
-    id: number,
-    payload: number
-}
 
 export const CHANGE_PROGRESS_STATUS = 'CHANGE_PROGRESS_STATUS';
 interface ChangeProgressStatusInterface {
@@ -43,7 +30,7 @@ interface AddFactAboutWorkInterface {
     id: number,
     payload: factAboutWork
 }
-//
+
 export const DELETE_FACT_ABOUT_WORK = 'DELETE_FACT_ABOUT_WORK';
 interface DeleteFactAboutWorkInterface {
     type: typeof DELETE_FACT_ABOUT_WORK,
@@ -52,8 +39,7 @@ interface DeleteFactAboutWorkInterface {
 }
 
 
-export type actionType = ChangeQuantityInterface |
-    ChangePriceInterface |
+export type actionType =
     ChangeProgressStatusInterface |
     AddFactAboutWorkInterface |
     DeleteFactAboutWorkInterface;

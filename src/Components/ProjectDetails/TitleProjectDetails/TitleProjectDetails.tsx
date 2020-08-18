@@ -30,9 +30,10 @@ const TitleProjectDetails: React.FC<Props> = ({id}) => {
         <div className={style.name}>
             <Row>
                 <Col><h2>{currentProject.title}</h2></Col>
-                <Col> <SelectInput valueProgress={currentProject.progress}
-                                   label={'Статус проекта:'}
-                                   onChange={changeStatus}
+                <Col> <SelectInput
+                    valueProgress={currentProject.progress}
+                    label={'Статус проекта:'}
+                    onChange={changeStatus}
                 /></Col>
             </Row>
             <p>{currentProject.description}</p>

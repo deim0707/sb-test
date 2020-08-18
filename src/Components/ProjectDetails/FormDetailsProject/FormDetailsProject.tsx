@@ -86,7 +86,6 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
                         onClick={(e) => sendDataToStore(e)}>
                         Добавить
                     </Button>
-
                 </Col>
             </Row>
         </div>
