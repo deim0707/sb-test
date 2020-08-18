@@ -1,5 +1,6 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {changeProgressStatus} from "../../../Store/actions";
 import {useParams} from 'react-router-dom';
 import {ProjectItemType} from "../../../Store/types";
 import {findItemInState} from "../../../helpers";
@@ -15,10 +16,17 @@ import style from './Details.module.scss';
 const Details: React.FC = () => {
     const {id} = useParams();
 
-    const project: ProjectItemType = useSelector((state: ProjectItemType[]) => {
+    const currentProject: ProjectItemType = useSelector((state: ProjectItemType[]) => {
         const idxItemInState = findItemInState(state, Number(id));
         return state[idxItemInState];
     })
+
+    const dispatch = useDispatch();
+    //РЕЛИЗОВАТЬ
+    //Можно вынести тайтл, статус пректа и дескрипшн в отдельный компонент. а тут их объеденить
+    const changeStatus = (value:string) => {
+        dispatch(changeProgressStatus(id, value))
+    }
 
     return (
         <div className={style.detailsWrapper}>
@@ -27,11 +35,13 @@ const Details: React.FC = () => {
 
             <div className={style.name}>
                 <Row>
-                    <Col><h2>{project.title}</h2></Col>
-                    <Col> <SelectInput valueProgress={project.progress} id={project.id}
-                                       label={'Статус проекта:'}/></Col>
+                    <Col><h2>{currentProject.title}</h2></Col>
+                    <Col> <SelectInput valueProgress={currentProject.progress}
+                                       label={'Статус проекта:'}
+                                       onChange={changeStatus}
+                    /></Col>
                 </Row>
-                <p>{project.description}</p>
+                <p>{currentProject.description}</p>
             </div>
 
             <FormDetailsProject id={id}/>

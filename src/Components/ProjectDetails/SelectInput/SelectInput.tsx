@@ -4,12 +4,11 @@ import style from './SelectInput.module.scss'
 
 interface Props {
     label: string
-    id?: number,
     valueProgress?: string,
     onChange?: any
 }
 
-const SelectInput: React.FC<Props> = ({valueProgress, id, label, onChange}) => {
+const SelectInput: React.FC<Props> = ({valueProgress, label, onChange}) => {
 
     return (
         <Form inline className={`${style.selectInput}`}>
