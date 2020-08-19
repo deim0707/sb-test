@@ -1,7 +1,9 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Link, useHistory} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {ProjectItemType} from "../../../Store/types";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
 import style from './HeaderDetails.module.scss'
 
 
@@ -23,14 +25,27 @@ const HeaderDetails: React.FC<Props> = ({id}) => {
         else return `/projects/${projects[projects.length - 1].id}`
     }
 
+
+    const history = useHistory();
+    const changeProjectOnKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'ArrowRight') history.push(nextPage())
+        if (e.key === 'ArrowLeft') history.push(prewPage())
+        if (e.key === 'ArrowUp') history.push('/')
+
+    }
+    useEffect(() => {
+        document.addEventListener('keydown', changeProjectOnKeyDown)
+        return () => {
+            document.removeEventListener('keydown', changeProjectOnKeyDown)
+        }
+    })
+
     return (
-        <nav className={style.headerDetails}>
-            <ul>
-                <li><Link to={'/'}>На главную</Link></li>
-                <li><Link to={prewPage()}>Назад</Link></li>
-                <li><Link to={nextPage()}>Вперёд</Link></li>
-            </ul>
-        </nav>
+        <ButtonGroup aria-label="Basic example" className={style.headerDetails}>
+            <Button variant="outline-primary"><Link to={'/'}>На главную</Link></Button>
+            <Button variant="outline-primary"><Link to={prewPage()}>Назад</Link></Button>
+            <Button variant="outline-primary"><Link to={nextPage()}>Вперёд</Link></Button>
+        </ButtonGroup>
 
     )
 }

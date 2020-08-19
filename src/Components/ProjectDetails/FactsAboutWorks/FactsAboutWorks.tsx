@@ -5,9 +5,9 @@ import {deleteFactAboutWork} from "../../../Store/actions";
 import {findItemInState} from "../../../helpers";
 import Table from "react-bootstrap/Table";
 import trash from '../../../img/trash.svg'
-import style from "./FactsAboutWorks.module.scss";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import style from "./FactsAboutWorks.module.scss";
 
 
 interface Props {
@@ -25,7 +25,7 @@ const FactsAboutWorks: React.FC<Props> = ({id}) => {
         const date = new Date(dateNumber)
         const year = date.getFullYear()
         const month = date.getMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-        const day = date.getMonth() < 10 ? `0${date.getDate()}` : date.getDate();
+        const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 
         return `${day}.${month}.${year}`
     }

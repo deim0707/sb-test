@@ -1,14 +1,8 @@
 .headerDetails {
   margin-bottom: 20px;
 
-  ul {
-    display: flex;
-    width: 500px;
-    justify-content: space-between;
-
-    li {
-      list-style-type: none;
-
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }

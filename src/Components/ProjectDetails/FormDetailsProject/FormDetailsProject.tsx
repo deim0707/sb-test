@@ -24,7 +24,7 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (title !== '' && quantity !== '' && price !== '' && finishDate !== '') setIsButtonDisabled(false)
+        if (title && quantity && price && finishDate) setIsButtonDisabled(false)
     }, [title, quantity, price, finishDate])
 
 
@@ -82,6 +82,7 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
             <Row>
                 <Col>
                     <Button
+                        variant={"primary"}
                         disabled={isButtonDisabled}
                         onClick={(e) => sendDataToStore(e)}>
                         Добавить

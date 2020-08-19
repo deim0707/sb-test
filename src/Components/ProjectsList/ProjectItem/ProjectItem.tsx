@@ -22,7 +22,7 @@ const ProjectItem: React.FC<Props> = ({project}) => {
 
                     <p>{project.description}</p>
                 </div>
-                <Button variant="dark">
+                <Button variant="outline-dark">
                     <Link to={`/projects/${project.id}`}>Подробности</Link>
                 </Button>
             </div>
