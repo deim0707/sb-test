@@ -4,20 +4,12 @@ import HeaderDetails from "../HeaderDetails/HeaderDetails";
 import FactsAboutWorks from "../FactsAboutWorks/FactsAboutWorks";
 import FormDetailsProject from "../FormDetailsProject/FormDetailsProject";
 import TitleProjectDetails from "../TitleProjectDetails/TitleProjectDetails";
-import {ProjectItemType} from "../../../Store/types";
-import {useSelector} from "react-redux";
-import {findItemInState} from "../../../helpers";
 import style from './Details.module.scss';
 
 
 const Details: React.FC = () => {
 
     const {id} = useParams();
-
-    const currentProject: ProjectItemType = useSelector((state: ProjectItemType[]) => {
-        const idxItemInState = findItemInState(state, Number(id));
-        return state[idxItemInState];
-    })
 
     return (
         <div className={style.detailsWrapper}>
@@ -28,7 +20,7 @@ const Details: React.FC = () => {
 
             <FormDetailsProject id={id}/>
 
-            {currentProject.factsAboutWork.length > 0 && <FactsAboutWorks id={Number(id)}/>}
+            <FactsAboutWorks id={Number(id)}/>
 
         </div>
     );

@@ -12,14 +12,14 @@ import style from './App.module.scss'
 const App: React.FC = () => {
     return (
         <Router>
-            <Switch>
-                <Container>
-                    <div className={style.app}>
+            <Container>
+                <div className={style.app}>
+                    <Switch>
                         <Route path='/projects/:id' exact children={<Details/>}/>
                         <Route path='/' exact component={Projects}/>
-                    </div>
-                </Container>
-            </Switch>
+                    </Switch>
+                </div>
+            </Container>
         </Router>
     );
 }
