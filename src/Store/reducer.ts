@@ -20,7 +20,6 @@ const reducerProjects = (state = initialState, action: actionType): ProjectItemT
             return changeOneItem(state, action.id, {progress: action.payload});
 
         case 'ADD_FACT_ABOUT_WORK':
-            console.log('ADD_FACT_ABOUT_WORK')
             return changeOneItem(state, action.id,
                 {factsAboutWork: arrayWithFacts(state, action.id).push(action.payload)}
             );
