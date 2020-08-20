@@ -3,7 +3,6 @@ import {Link, useHistory} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {ProjectItemType} from "../../../Store/types";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Button from "react-bootstrap/Button";
 import style from './HeaderDetails.module.scss'
 
 
@@ -42,9 +41,9 @@ const HeaderDetails: React.FC<Props> = ({id}) => {
 
     return (
         <ButtonGroup aria-label="Basic example" className={style.headerDetails}>
-            <Button variant="outline-primary"><Link to={'/'}>На главную</Link></Button>
-            <Button variant="outline-primary"><Link to={prewPage()}>Назад</Link></Button>
-            <Button variant="outline-primary"><Link to={nextPage()}>Вперёд</Link></Button>
+            <Link to={'/'} className={'btn btn-outline-primary'}>На главную</Link>
+            <Link to={prewPage()} className={'btn btn-outline-primary'}>Назад</Link>
+            <Link to={nextPage()} className={'btn btn-outline-primary'}>Вперёд</Link>
         </ButtonGroup>
 
     )

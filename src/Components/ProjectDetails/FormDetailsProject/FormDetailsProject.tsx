@@ -58,23 +58,23 @@ const FormDetailsProject: React.FC<Props> = ({id}) => {
             </Row>
 
             <Row>
-                <Col>
+                <Col lg={6} md={6} sm={12}>
                     <Input type={'number'} label={'Колличество:'} value={quantity} onChange={setQuantity}
                            placeholder={'Введите колличество'}/>
                 </Col>
-                <Col>
+                <Col lg={6} md={6} sm={12}>
                     <Input type={'number'} label={'Цена:'} value={price} onChange={setPrice}
                            placeholder={'Введите цену'}/>
                 </Col>
             </Row>
 
             <Row>
-                <Col>
+                <Col lg={6} md={6} sm={12}>
                     <Input className={style.longLabel} type={'date'} label={'Крайний срок:'} value={finishDate
                     } onChange={setFinishDate}/>
 
                 </Col>
-                <Col>
+                <Col lg={6} md={6} sm={12}>
                     <SelectInput label={'Статус:'} valueProgress={status} onChange={setStatus}/>
                 </Col>
             </Row>

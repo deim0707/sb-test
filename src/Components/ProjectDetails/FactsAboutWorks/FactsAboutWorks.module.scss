@@ -1,9 +1,12 @@
 .facts {
   margin-top: 20px;
 
+  table {
+    max-width: 97vw;
+  }
+
   .delete {
     cursor: pointer;
-
   }
 
 }

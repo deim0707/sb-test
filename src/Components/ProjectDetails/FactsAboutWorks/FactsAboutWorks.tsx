@@ -5,8 +5,6 @@ import {deleteFactAboutWork} from "../../../Store/actions";
 import {findItemInState} from "../../../helpers";
 import Table from "react-bootstrap/Table";
 import trash from '../../../img/trash.svg'
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import style from "./FactsAboutWorks.module.scss";
 
 
@@ -41,52 +39,46 @@ const FactsAboutWorks: React.FC<Props> = ({id}) => {
 
     return (
 
-        <Row>
-            <Col>
-                <div className={style.facts}>
-                    <Table striped bordered>
-                        <thead>
-                        <tr>
-                            <td>№</td>
-                            <td>Заголовок</td>
-                            <td>Колличество</td>
-                            <td>Цена</td>
-                            <td>Дедлайн</td>
-                            <td>Статус</td>
-                            <td/>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            currentProject.map((item: factAboutWork, idx: number): JSX.Element => {
-                                return (
-                                    <tr key={`pr${id}fact${idx}`}>
-                                        <td>{idx + 1}</td>
-                                        <td>{item.title}</td>
-                                        <td>{item.qt}</td>
-                                        <td>{item.price}</td>
-                                        <td>
-                                            {returnDateString(item.date)}
-                                        </td>
-                                        <td>{returnNameStatus(item.status)}</td>
-                                        <td>
-                                            <img
-                                                src={trash}
-                                                alt="delete item"
-                                                className={style.delete}
-                                                onClick={() => dispatch(deleteFactAboutWork(id, idx))}
-                                            />
-                                        </td>
-                                    </tr>
+        <div className={style.facts}>
+            <Table striped bordered responsive className={'table-responsive responsive'}>
+                <thead>
+                <tr>
+                    <td>№</td>
+                    <td>Заголовок</td>
+                    <td>Колличество</td>
+                    <td>Цена</td>
+                    <td>Дедлайн</td>
+                    <td>Статус</td>
+                    <td/>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    currentProject.map((item: factAboutWork, idx: number): JSX.Element => {
+                        return (
+                            <tr key={`pr${id}fact${idx}`}>
+                                <td>{idx + 1}</td>
+                                <td>{item.title}</td>
+                                <td>{item.qt}</td>
+                                <td>{item.price}</td>
+                                <td>{returnDateString(item.date)}</td>
+                                <td>{returnNameStatus(item.status)}</td>
+                                <td>
+                                    <img
+                                        src={trash}
+                                        alt="delete item"
+                                        className={style.delete}
+                                        onClick={() => dispatch(deleteFactAboutWork(id, idx))}
+                                    />
+                                </td>
+                            </tr>
 
-                                )
-                            })
-                        }
-                        </tbody>
-                    </Table>
-                </div>
-            </Col>
-        </Row>
+                        )
+                    })
+                }
+                </tbody>
+            </Table>
+        </div>
 
     )
 }
