@@ -5,4 +5,4 @@
 `npm i` - установка зависимостей  
 `npm run start` - запуск девсервера  
 
-Посмотреть: https://deim0707.github.io/sb-test/build/index.html#/
+# Посмотреть: https://deim0707.github.io/sb-test/build/index.html#/
